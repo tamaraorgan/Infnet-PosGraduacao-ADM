@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2020 (64 Bit) -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="16.404mm" height="5.3573mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 56.5 18.45"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <font id="FontID0" horiz-adv-x="672" font-variant="normal" style="fill-rule:nonzero" font-weight="700">
+	<font-face 
+		font-family="Raleway">
+		<font-face-src>
+			<font-face-name name="Raleway Bold"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="A" horiz-adv-x="672" d="M266.994 709.999l140.004 0 261.003 -709.999 -142.005 0 -59.0021 177.006 -260.659 0 -59.3334 -177.006 -142.005 0 261.997 709.999zm167.676 -435.995l-97.6741 292.996 -98.1645 -292.996 195.839 0z"/>
+   <glyph unicode="D" horiz-adv-x="716" d="M74.0044 0l0 709.999 257.995 0c77.3309,0 142.005,-15.8373 193.996,-47.4985 52.0045,-31.6613 91.0079,-74.3357 117.01,-127.997 25.989,-53.6744 38.9901,-113.167 38.9901,-178.504 0,-72.0032 -14.3264,-134.663 -42.9925,-188.006 -28.6661,-53.3298 -69.1671,-94.6657 -121.503,-123.994 -52.3358,-29.3287 -114.161,-43.9997 -185.501,-43.9997l-257.995 0zm468.995 356c0,46.0009 -8.33609,86.5019 -24.995,121.503 -16.6722,35.001 -40.6732,62.3285 -72.0032,81.9959 -31.3299,19.6674 -69.3393,29.501 -114.002,29.501l-120.005 0 0 -468.001 120.005 0c45.3383,0 83.6658,10.165 114.996,30.495 31.3432,20.3433 55.172,48.3334 71.4996,84.0103 16.3409,35.6636 24.5047,75.8333 24.5047,120.496z"/>
+   <glyph unicode="M" horiz-adv-x="865" d="M652.998 0l0 466 -182.003 -347.002 -76.9995 0 -182.003 347.002 0 -466 -137.99 0 0 709.999 147.995 0 210.006 -404.002 211.994 404.002 147.002 0 0 -709.999 -138.003 0z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Raleway";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#5BC0BE}
+    .fnt0 {font-weight:bold;font-size:25.99px;font-family:'Raleway'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <text x="-0.13" y="18.45"  class="fil0 fnt0">ADM</text>
+ </g>
+</svg>
