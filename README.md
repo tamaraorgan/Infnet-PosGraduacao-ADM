@@ -9,7 +9,7 @@ A api foi desenvolvida com uma duas tabelas uma sendo das stack e outra do cadas
 
 * A api segue em desenvolvimento onde serão implantadas métodos para alterar e autenticações.
 
-### Seb
+### Web
 A web foi desenvolvida com a aparecia de um sistema desktop para que possa ser feito o gerenciamento de forma intuitiva e simples.
 
 Depois informações estão disponibilizadas nas README de cada pasta.
