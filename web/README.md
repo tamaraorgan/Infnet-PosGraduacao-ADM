@@ -6,6 +6,6 @@
 1. yarn start -> no server, pois somente com o server funcionando que poderá puxar
 as informações lá contidas.
 
-Futuramente quando o server e o web estarão em produção para poderem funcionarem
+Futuramente o back-end e o front-end estarão em produção para poderem funcionar
 independentes.
 

@@ -20,5 +20,4 @@ Separar as tabelas no banco de dados e criar os relacionamentos conforme necess�
 3- npx sequelize-cli db:create -> para criar a tabela de dados
 4 - npx sequelize-cli db:migrate -> para criar as migrations no banco de dados
 
-Caso queria visualizar somente a api na pasta raiz do respositório há um arquivo 
-do insomina, com os métodos, basta somente importar.
+Caso queria visualizar somente a API na pasta raiz do repositório há um diretório com um arquivo do Insomina, com os métodos, basta somente importar.
