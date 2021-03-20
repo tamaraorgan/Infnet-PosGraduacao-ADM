@@ -1,5 +1,7 @@
 # Infnet Pós Graduação - ADM
- Projeto realizado durante a 2ª semana da pós-graduação INFNET-Desenvolvimento Full Stack - MERN
+Projeto realizado durante a 2ª semana da pós-graduação INFNET-Desenvolvimento Full Stack - MERN
+
+Este prejeto está usando os frameworks node, express, react, sequelize com banco de dados relacionar como o mysql (atualmente adaptado para usar o sqlite)
 
 # Informações
 O projeto tem como escopo criar um app para que possam ser feitos cadastros de funcionários remotos, de acordo com sua Stack. Sendo um gerenciador administrativo, pode novos funcionários podem ser incluídos.

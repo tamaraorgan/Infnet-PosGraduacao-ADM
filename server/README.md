@@ -15,9 +15,9 @@ Separar as tabelas no banco de dados e criar os relacionamentos conforme necess�
 
 # Para poder visualizar o funcionamento deve-se:
 
-1- yarn -> para instalar todas as dependencias.
-2- yarn start -> para startar a aplicação
-3- npx sequelize-cli db:create -> para criar a tabela de dados
-4 - npx sequelize-cli db:migrate -> para criar as migrations no banco de dados
+- yarn -> para instalar todas as dependencias.
+- yarn start -> para startar a aplicação
+- npx sequelize-cli db:create -> para criar a tabela de dados
+- npx sequelize-cli db:migrate -> para criar as migrations no banco de dados
 
 Caso queria visualizar somente a API na pasta raiz do repositório há um diretório com um arquivo do Insomina, com os métodos, basta somente importar.
