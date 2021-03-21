@@ -1,7 +1,11 @@
 import Menu from '../Menu'
 import { Container, Content, Section, Body } from './style'
 
-function Layout({ children }) {
+interface LayoutProps {
+  children: any
+}
+
+function Layout({ children }: LayoutProps) {
   return (
     <Container>
       <Content>

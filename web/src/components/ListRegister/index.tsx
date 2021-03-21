@@ -5,7 +5,20 @@ import Modal from '../Modal'
 
 import { List, TableTitle, TableBody } from './style'
 
-const ListRegister = ({ register, update }) => {
+interface ListRegisterProps {
+  register: TableProps[]
+  update: (update: boolean) => void
+}
+interface TableProps {
+  id: string
+  name: string
+  phone: string
+  email: string
+  place: string
+  state: string
+}
+
+const ListRegister = ({ register, update }: ListRegisterProps) => {
   const [isError, setIsError] = useState(false)
   const [error, setError] = useState([
     {
@@ -18,12 +31,11 @@ const ListRegister = ({ register, update }) => {
     }
   ])
 
-  const handleDeleteInput = async id => {
+  const handleDeleteInput = async (id: string) => {
     try {
       await deleteServiceAllStacksList(id)
-      if (setIsError) {
-        alert("Deletado com sucesso")
-      }
+
+      alert('Deletado com sucesso')
 
       update(true)
     } catch (error) {}
@@ -45,7 +57,7 @@ const ListRegister = ({ register, update }) => {
           </TableTitle>
           <TableBody>
             {register &&
-              register.map((item, i) => (
+              register.map((item) => (
                 <tr>
                   <td>{item.name}</td>
                   <td>{item.email}</td>

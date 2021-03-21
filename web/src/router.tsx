@@ -9,9 +9,9 @@ import Layout from './components/Layout'
 const Router = () => (
   <Switch>
     <Layout>
-      <Route path="/" exact component={Home} title="HOME" />
-      <Route path="/:stack/:id/" component={Stack} title="STACK" />
-      <Route path="/contact" component={Contact} title="CONTATO" />
+      <Route path="/" exact component={Home} />
+      <Route path="/:stack/:id/" component={Stack} />
+      <Route path="/contact" component={Contact} />
     </Layout>
   </Switch>
 )

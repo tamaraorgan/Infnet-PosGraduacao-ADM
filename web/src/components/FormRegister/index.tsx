@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { IoAdd } from 'react-icons/io5'
 import { postServiceAllStacksList } from '../../services/stack.service'
 
@@ -6,8 +6,20 @@ import Modal from '../Modal'
 
 import { Form } from './style'
 
-const FormRegister = ({ id, update }) => {
-  const [form, setForm] = useState({})
+interface FormRegisterProps {
+  id: string
+  update: (update: boolean) => void
+}
+interface FormProps {
+  name: string
+  email: string
+  phone: string
+  place: string
+  state: string
+}
+
+const FormRegister = ({ id, update }: FormRegisterProps) => {
+  const [form, setForm] = useState({} as FormProps)
   const [isError, setIsError] = useState(false)
   const [error, setError] = useState([
     {
@@ -21,25 +33,20 @@ const FormRegister = ({ id, update }) => {
   ])
   console.log(error[0])
 
-  const handleChangeList = e => {
+  const handleChangeList = (e: FormEvent) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value
+      [(e.target as HTMLInputElement).name]: (e.target as HTMLInputElement).value
     })
   }
 
   const handleCreateList = async () => {
     try {
       await postServiceAllStacksList(id, form)
-      if (setIsError) {
-        return <Modal error={error[0]} />
-      }
 
-      setForm({})
+      setForm({} as FormProps)
       update(true)
-    } catch (error) {
-      return <Modal error={error[1]} />
-    }
+    } catch (error) {}
   }
 
   return (

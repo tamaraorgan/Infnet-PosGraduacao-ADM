@@ -5,6 +5,11 @@ import Spinners from '../../components/Spinner'
 
 import { Container, Body, Title, StackSection } from './style'
 
+interface StackProps {
+  stack: string
+  image: string
+  id: number
+}
 
 
 function Home() {
@@ -31,7 +36,7 @@ function Home() {
       <Body>
         {loagind ? <Spinners/> : (
           <>
-          {stacks.map((stack, i) => (
+          {stacks.map((stack: StackProps, i) => (
             <StackSection key={i}>
               <h3>{stack.stack}</h3>
               <img src={stack.image} alt="" />

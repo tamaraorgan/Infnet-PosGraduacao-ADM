@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+interface ShowProps {
+  show: boolean
+}
 export const MenuContainer = styled.div`
   height: 100vh;
   width: auto;
@@ -32,7 +35,7 @@ export const MenuTitle = styled.div`
     color: ${props => props.theme.colors.primary};
   }
 `
-export const MenuItem = styled.nav`
+export const MenuItem = styled.nav<ShowProps>`
   a {
     color: ${props => props.theme.colors.text};
     display: flex;

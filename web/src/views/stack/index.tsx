@@ -8,9 +8,14 @@ import { getServiceAllStacksListById } from '../../services/stack.service'
 
 import { Container, Title, Body } from './style'
 
+interface ParamsProps {
+  id: string
+  stack: string
+}
+
 
 function Stack() {
-  const { id, stack } = useParams()
+  const { id, stack } = useParams<ParamsProps>()
   const [lists, setLists] = useState([])
   const [updateList, setUpdateList] = useState(false)
   const [loagind, setLoagind] = useState(false)

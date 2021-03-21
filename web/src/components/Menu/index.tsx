@@ -8,7 +8,7 @@ import { IoDesktopSharp, IoDesktop } from 'react-icons/io5'
 
 import LogoSVG from '../../assets/image/adm.svg'
 
-import { MenuContainer, MenuTitle, MenuItem } from './style.js'
+import { MenuContainer, MenuTitle, MenuItem } from './style'
 
 
 function Menu() {
