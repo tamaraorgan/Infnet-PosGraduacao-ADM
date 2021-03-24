@@ -25,8 +25,9 @@ export const Title = styled.div`
 export const Body = styled.div`
   width: 85%;
   margin-top: 4rem;
+
+  @media (max-width: 576px) {
+    min-height: calc(100vh - 8rem);
+    overflow-x: scroll;
+  }
 `
-
-
-
-

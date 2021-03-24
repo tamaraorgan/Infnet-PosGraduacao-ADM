@@ -1,25 +1,25 @@
-import { useState } from 'react'
-import { IoMdClose } from 'react-icons/io'
+import InfoSVG from '../../assets/image/info.svg'
 
-import { ModalContainer, ModalSection, ModalHeader, ModalBody } from './style'
+import { BodyModal, ButtonModal, ContainerModal, SectionModal } from './style'
 
-const ModalInfo = ({ error }) => {
-  const [show, setShow ] = useState(false)
-
-  const handleCloseModal = () => {
-    setShow(true)
-  }
-  
+function Modal({ modal, isShow, toggleModal, handleDeleteInput }) {
   return (
-    <ModalContainer>
-      <ModalSection>
-        <ModalHeader>
-          {error.type} 
-          <button onClick={handleCloseModal} ><IoMdClose /></button>
-        </ModalHeader>
-        <ModalBody>{error.message}</ModalBody>
-      </ModalSection>
-    </ModalContainer>
+    <ContainerModal isShow={isShow} toggle={toggleModal}>
+      <SectionModal>
+        <img src={InfoSVG} alt="" />
+        <BodyModal>
+          <header toggleModal={toggleModal}>EXCLUIR FUNCIONÁRIO</header>
+          <main>
+            Deseja excluir o funcionário(a), {modal?.data?.name} ?
+          </main>
+          <ButtonModal>
+            <button onClick={handleDeleteInput}>SIM</button>
+            <button onClick={toggleModal}>NÃO</button>
+          </ButtonModal>
+        </BodyModal>
+      </SectionModal>
+    </ContainerModal>
   )
 }
-export default ModalInfo
+
+export default Modal

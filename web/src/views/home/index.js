@@ -1,27 +1,19 @@
 import { useState, useEffect, useCallback } from 'react'
 import { getServiceAllStacks } from '../../services/stack.service'
-import { Link } from 'react-router-dom'
-import Spinners from '../../components/Spinner'
+import CardStack from '../../components/CardStack'
 
 import { Container, Body, Title, StackSection } from './style'
 
-interface StackProps {
-  stack: string
-  image: string
-  id: number
-}
-
-
 function Home() {
   const [stacks, setStacks] = useState([])
-  const [loagind, setLoagind] = useState(false)
+  const [hasError, setHasError] = useState(false)
 
   const getStacks = useCallback(async () => {
     try {
       const res = await getServiceAllStacks()
       setStacks(res.data)
     } catch (error) {
-   
+      setHasError(true)
     }
   }, [])
 
@@ -29,23 +21,19 @@ function Home() {
     getStacks()
   }, [getStacks])
 
+  const MapStacks = stacks =>
+    stacks.map((stack, i) => <CardStack key={i} stack={{ ...stack }} />)
+
   document.title = 'INÍCIO'
   return (
     <Container>
       <Title>INÍCIO</Title>
       <Body>
-        {loagind ? <Spinners/> : (
-          <>
-          {stacks.map((stack: StackProps, i) => (
-            <StackSection key={i}>
-              <h3>{stack.stack}</h3>
-              <img src={stack.image} alt="" />
-              <Link to={`/${stack.stack}/${stack.id}`}>ENTRAR</Link>
-            </StackSection>
-          ))}
-          </>
+        {hasError ? (
+          <div>Aconteceu um erro, volte mais tarde...</div>
+        ) : (
+          <StackSection>{MapStacks(stacks)}</StackSection>
         )}
-        
       </Body>
     </Container>
   )

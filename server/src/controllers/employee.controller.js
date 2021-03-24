@@ -8,7 +8,7 @@ module.exports = {
       include: { association: 'employees' }
     })
 
-    return response.json(stacks.employees) // mostra somente os registros employees tem que ser desse jeito para listar no front
+    return response.json(stacks) // mostra somente os registros employees tem que ser desse jeito para listar no front
     //return response.json(register) mostra tudo
   },
   async create(request, response) {

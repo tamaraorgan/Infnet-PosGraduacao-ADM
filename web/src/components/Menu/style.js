@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
-interface ShowProps {
-  show: boolean
-}
-export const MenuContainer = styled.div`
+export const MenuContainer = styled.header`
   height: 100vh;
   width: auto;
+
+  @media (max-width: 576px) {
+    width: 100%;
+    height: 4rem;
+  }
 `
 export const MenuTitle = styled.div`
   width: 100%;
@@ -34,8 +36,12 @@ export const MenuTitle = styled.div`
     font-size: 1.3rem;
     color: ${props => props.theme.colors.primary};
   }
+  @media (max-width: 576px) {
+    display: none;
+
+  }
 `
-export const MenuItem = styled.nav<ShowProps>`
+export const MenuItem = styled.nav`
   a {
     color: ${props => props.theme.colors.text};
     display: flex;
@@ -67,6 +73,16 @@ export const MenuItem = styled.nav<ShowProps>`
   .active {
     svg {
       color: ${props => props.theme.colors.tertiary} 
+    }
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    a {
+      flex: 1;
+    }
+    .description {
+      display: none;
     }
   }
 `

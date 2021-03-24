@@ -16,6 +16,7 @@ export default createGlobalStyle`
   body {
     width: 100vw;
     height: 100vh;
+    
   }
   a {
     text-decoration: none;
@@ -23,5 +24,9 @@ export default createGlobalStyle`
 
   li {
     list-style: none;
+  }
+  @media (max-width: 576px) {
+    height: auto;
+    overflow-y: scroll;
   }
 `

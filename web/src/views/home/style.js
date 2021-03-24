@@ -19,6 +19,11 @@ export const Title = styled.div`
   padding: 0 1rem;
   font-size: 1.5rem;
   text-transform: uppercase;
+
+  @media (max-width: 576px) {
+    text-align: center;
+    justify-content: center;
+  }
 `
 export const Body = styled.div`
   width: 100%;
@@ -27,41 +32,24 @@ export const Body = styled.div`
   justify-content: center;
   align-items: center;
   padding: 5rem;
+  @media (max-width: 576px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
 `
 
 export const StackSection = styled.div`
-  flex: 1;
-  height: 20rem;
-  margin: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  width: 90%;
+  height: 20rem;
 
-  background-color: ${props => props.theme.colors.white};
-  border-radius: 1rem;
-  padding: 1rem;
-
-  h3 {
-    text-transform: uppercase;
-    font-weight: 500;
-    text-align: center;
-    color: ${props => props.theme.colors.primary};
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid ${props => props.theme.colors.secundary};
-  }
-
-  img {
+  @media (max-width: 576px) {
+    height: 90%;
     width: 90%;
-    height: auto;
+    flex-direction: column;
   }
 
-  > a {
-    border: none;
-    padding: 0.5rem 1.5rem;
-    background-color: ${props => props.theme.colors.secundary};
-    color: ${props => props.theme.colors.white} !important;
-    text-decoration: none !important;
+  @media (min-width: 2000px) {
+    height: 30rem;
   }
 `

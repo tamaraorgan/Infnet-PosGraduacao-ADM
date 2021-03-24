@@ -8,7 +8,7 @@ import { IoDesktopSharp, IoDesktop } from 'react-icons/io5'
 
 import LogoSVG from '../../assets/image/adm.svg'
 
-import { MenuContainer, MenuTitle, MenuItem } from './style'
+import { MenuContainer, MenuTitle, MenuItem } from './style.js'
 
 
 function Menu() {
@@ -47,7 +47,7 @@ function Menu() {
           exact
           activeClassName="active"
           className="navbar_link"
-          to="/Back-End/1"
+          to="/stacks/1"
         >
           <div className="button">
             <IoDesktop />
@@ -58,7 +58,7 @@ function Menu() {
           exact
           activeClassName="active"
           className="navbar_link"
-          to="/Front-End/2"
+          to="/stacks/2"
         >
           <div className="button">
             <IoDesktopSharp />
@@ -69,7 +69,7 @@ function Menu() {
           exact
           activeClassName="active"
           className="navbar_link"
-          to="/Mobile/3"
+          to="/stacks/3"
         >
           <div className="button">
             <FaMobile />

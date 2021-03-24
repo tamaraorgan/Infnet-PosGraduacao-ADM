@@ -1,37 +1,32 @@
 import { useCallback, useEffect, useState } from 'react'
-import { useParams } from 'react-router'
-import Spinners from '../../components/Spinner'
+import { useHistory, useParams } from 'react-router'
 
 import FormRegister from '../../components/FormRegister'
 import ListRegister from '../../components/ListRegister'
 import { getServiceAllStacksListById } from '../../services/stack.service'
+import Loading from '../../components/Spinner'
 
 import { Container, Title, Body } from './style'
 
-interface ParamsProps {
-  id: string
-  stack: string
-}
-
-
 function Stack() {
-  const { id, stack } = useParams<ParamsProps>()
-  const [lists, setLists] = useState([])
+  const { id } = useParams()
+  const history = useHistory()
+  const [lists, setLists] = useState({})
   const [updateList, setUpdateList] = useState(false)
-  const [loagind, setLoagind] = useState(false)
-
+  const [loading, setLoading] = useState(false)
+  console.log(lists.allocation)
   //const [hasError, setHasError] = useState(false)
-
-  console.log(lists)
 
   const getListById = useCallback(async () => {
     try {
+      setLoading(true)
       const res = await getServiceAllStacksListById(id)
       setLists(res.data)
+      setLoading(false)
     } catch (error) {
-      //setHasError(true)
+      history.push('?/error=404')
     }
-  }, [id])
+  }, [id, history])
 
   useEffect(() => {
     getListById()
@@ -41,14 +36,14 @@ function Stack() {
   document.title = 'STACK'
   return (
     <Container>
-      <Title>{stack}</Title>
+      <Title>{lists.stack}</Title>
       <Body>
-        {loagind ? (
-          <Spinners />
+        {loading ? (
+          <Loading />
         ) : (
           <>
             <FormRegister id={id} update={setUpdateList} />
-            <ListRegister register={lists} update={setUpdateList} />
+            <ListRegister register={lists.employees} update={setUpdateList} />
           </>
         )}
       </Body>
