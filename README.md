@@ -1,10 +1,6 @@
 # Infnet Pós Graduação - ADM
 Projeto realizado durante a 2ª semana da pós-graduação INFNET-Desenvolvimento Full Stack - MERN
 
-## Projeto em produção
-https://infnet-adm-funcionarios.vercel.app/
-
-
 Este prejeto está usando os frameworks node, express, react, sequelize com banco de dados relacionar como o mysql (atualmente adaptado para usar o sqlite)
 
 # Informações
