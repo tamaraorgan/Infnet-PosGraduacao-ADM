@@ -4,13 +4,13 @@ import { BodyModal, ButtonModal, ContainerModal, SectionModal } from './style'
 
 function Modal({ modal, isShow, toggleModal, handleDeleteInput }) {
   return (
-    <ContainerModal isShow={isShow} toggle={toggleModal}>
+    <ContainerModal isShow={isShow}>
       <SectionModal>
         <img src={InfoSVG} alt="" />
         <BodyModal>
-          <header toggleModal={toggleModal}>EXCLUIR FUNCIONÁRIO</header>
+          <header>EXCLUIR FUNCIONÁRIO</header>
           <main>
-            Deseja excluir o funcionário(a), {modal?.data?.name} ?
+            Deseja excluir o funcionário(a), {modal?.data?.employee} ?
           </main>
           <ButtonModal>
             <button onClick={handleDeleteInput}>SIM</button>

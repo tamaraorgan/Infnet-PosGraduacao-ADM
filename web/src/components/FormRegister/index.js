@@ -26,9 +26,9 @@ const FormRegister = ({ id, update }) => {
       <Form onSubmit={handleCreateList}>
         <input
           type="text"
-          name="name"
-          placeholder="Nome"
-          value={form.name || ''}
+          name="employee"
+          placeholder="Nome Completo"
+          value={form.employee || ''}
           onChange={handleChangeList}
         />
         <input

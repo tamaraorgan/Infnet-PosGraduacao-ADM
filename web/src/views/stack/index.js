@@ -33,6 +33,8 @@ function Stack() {
     setUpdateList(false)
   }, [getListById, updateList])
 
+console.log(lists)
+
   document.title = 'STACK'
   return (
     <Container>
@@ -43,7 +45,7 @@ function Stack() {
         ) : (
           <>
             <FormRegister id={id} update={setUpdateList} />
-            <ListRegister register={lists.employees} update={setUpdateList} />
+            <ListRegister register={lists.registers} update={setUpdateList} />
           </>
         )}
       </Body>

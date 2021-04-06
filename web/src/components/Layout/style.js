@@ -8,7 +8,7 @@ export const Container = styled.div`
     flex-direction: column;
   }
 `
-export const BodyLayout = styled.body`
+export const BodyLayout = styled.div`
   width: 100vw;
   height: 100%;
   background-color: ${props => props.theme.colors.background};
