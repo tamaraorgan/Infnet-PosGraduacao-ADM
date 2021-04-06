@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { IoAdd } from 'react-icons/io5'
 import { postServiceAllStacksList } from '../../services/stack.service'
+import InfoSweet from '../../plugins/infoSwal'
 
 import { Form } from './style'
 
 const FormRegister = ({ id, update }) => {
   const [form, setForm] = useState({})
+
+  console.log(form)
 
   const handleChangeList = e => {
     setForm({
@@ -15,10 +18,33 @@ const FormRegister = ({ id, update }) => {
   }
 
   const handleCreateList = async () => {
-    await postServiceAllStacksList(id, form)
-
-    setForm({})
-    update(true)
+    const newform = {
+      ...form,
+      employee: form.employee.toUpperCase(),
+      place: form.place.toUpperCase(),
+      state: form.state.toUpperCase(),
+      email: form.email.toLowerCase(),
+      phone: form.phone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3')
+    }
+    await postServiceAllStacksList(id, newform)
+      .then(() => {
+        InfoSweet.fire({
+          icon: 'success',
+          title: 'Registro criado com sucesso!',
+          showConfirmButton: false,
+          timer: 2500
+        })
+        setForm({})
+        update(true)
+      })
+      .catch(err => {
+        InfoSweet.fire({
+          icon: 'error',
+          title: 'Erro na criação do registro, por favor tente novamente!',
+          showConfirmButton: false,
+          timer: 2500
+        })
+      })
   }
 
   return (

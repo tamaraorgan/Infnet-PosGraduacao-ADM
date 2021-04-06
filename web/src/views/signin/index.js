@@ -64,7 +64,9 @@ const SignIn = () => {
               </div>
               <button type="submit">LOGIN</button>
             </form>
-            <p>Faça seu <a href="/register">cadastro</a>!</p>
+            <p>
+              Faça seu <a href="/register">cadastro</a>!
+            </p>
           </SectionSignIn>
         </FormBody>
       </SignInBody>

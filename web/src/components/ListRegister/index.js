@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { FaTrashAlt } from 'react-icons/fa'
 import { deleteServiceAllStacksList } from '../../services/stack.service'
 import Modal from '../../components/Modal'
+import InfoSweet from '../../plugins/infoSwal'
 
 import { List, TableTitle, TableBody } from './style'
 
@@ -12,14 +13,26 @@ const ListRegister = ({ register, update }) => {
   })
 
   const handleDeleteInput = () => {
-    try {
-      if (modal.data.id) {
-        deleteServiceAllStacksList(modal.data.id)
-        alert('Deletado com sucesso')
-        update(true)
-      }
-    } catch (error) {
-      alert('Aconteceu um erro, tente novamente!')
+    if (modal.data.id) {
+      deleteServiceAllStacksList(modal.data.id)
+        .then(() => {
+          InfoSweet.fire({
+            icon: 'success',
+            title: 'Registro deletado com sucesso!',
+            showConfirmButton: false,
+            timer: 2500
+          })
+          update(true)
+        })
+        .catch(error => {
+          InfoSweet.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Tente novamente mais tarde!',
+            showConfirmButton: false,
+            timer: 2500
+          })
+        })
     }
   }
 
