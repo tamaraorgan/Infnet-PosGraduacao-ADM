@@ -5,15 +5,15 @@ if (node_environment === 'development') {
 }
 
 module.exports = {
-  //database: process.env.DB_NAME,
-  //username: process.env.DB_USERNAME,
-  //password: process.env.DB_PASSWORD,
-  //port: process.env.DB_PORT,
+  database: process.env.DB_NAME,
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
   host: process.env.DB_HOST,
   dialect: process.env.DB_DIALECT,
-  storage: process.env.DB_STORAGE,
+  //storage: process.env.DB_STORAGE,
   define: {
     timestamps: true,
-    underscored: true,
+    underscored: true
   }
 }

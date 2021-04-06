@@ -2,37 +2,25 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('employees', {
+    await queryInterface.createTable('skills', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
       },
-      stack_id: {
+      register_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'stacks', key: 'id' },
+        references: { model: 'registers', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      name: {
+      skill: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      email: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      phone: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      place: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      state: {
+      image: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -48,6 +36,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('employees')
+    await queryInterface.dropTable('skills')
   }
 }
