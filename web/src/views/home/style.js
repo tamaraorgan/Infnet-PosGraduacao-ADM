@@ -4,26 +4,10 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`
-export const Title = styled.div`
-  width: 100%;
-  height: 4rem;
-  background-color: ${props => props.theme.colors.primary};
-  color: ${props => props.theme.colors.textTitle};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1rem;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-
-  @media (max-width: 576px) {
-    text-align: center;
-    justify-content: center;
-  }
 `
 export const Body = styled.div`
   width: 100%;
@@ -49,7 +33,7 @@ export const StackSection = styled.div`
     flex-direction: column;
   }
 
-  @media (min-width: 2000px) {
+  @media (min-width: 1800px) {
     height: 30rem;
   }
 `

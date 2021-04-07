@@ -5,7 +5,7 @@ import thunk from 'redux-thunk'
 import SignReduce from './auth/auth.reducer'
 
 const reducers = combineReducers({
-  auth: SignReduce
+  auth: SignReduce,
 })   
 
 const middlewares = [thunk]

@@ -6,7 +6,8 @@ import ListRegister from '../../components/ListRegister'
 import { getServiceAllStacksListById } from '../../services/stack.service'
 import Loading from '../../components/Spinner'
 
-import { Container, Title, Body } from './style'
+import { Container, Body } from './style'
+import Header from '../../components/Header'
 
 function Stack() {
   const { id } = useParams()
@@ -14,7 +15,6 @@ function Stack() {
   const [lists, setLists] = useState({})
   const [updateList, setUpdateList] = useState(false)
   const [loading, setLoading] = useState(false)
-  console.log(lists.allocation)
   //const [hasError, setHasError] = useState(false)
 
   const getListById = useCallback(async () => {
@@ -24,7 +24,7 @@ function Stack() {
       setLists(res.data)
       setLoading(false)
     } catch (error) {
-      history.push('?/error=404')
+      history.push('?/error/404')
     }
   }, [id, history])
 
@@ -33,12 +33,12 @@ function Stack() {
     setUpdateList(false)
   }, [getListById, updateList])
 
-console.log(lists)
+  console.log("stack",lists)
 
   document.title = 'STACK'
   return (
-    <Container>
-      <Title>{lists.stack}</Title>
+    <Container >
+      <Header title={lists.stack} />
       <Body>
         {loading ? (
           <Loading />

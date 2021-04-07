@@ -1,10 +1,11 @@
-import { Container, Title, Body } from './style'
+import Header from '../../components/Header'
+import { Container, Body } from './style'
 
 function Contact() {
   document.title = 'CONTATO'
   return (
     <Container>
-      <Title>CONTATO</Title>
+      <Header title="CONTATO" />
       <Body>
         <h1>CONTATO</h1>
       </Body>

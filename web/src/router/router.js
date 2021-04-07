@@ -1,8 +1,7 @@
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect, Router } from 'react-router-dom'
 
 import { isPrivate } from '../config/auth'
-
-import Layout from '../components/Layout'
+import history from '../config/history'
 
 import Home from '../views/home'
 import Stack from '../views/stack'
@@ -11,7 +10,7 @@ import SignIn from '../views/signin'
 import Register from '../views/register'
 
 import Error404 from '../views/errors/404'
-
+import Layout from '../components/Layout'
 
 const Auth = ({ ...rest }) => {
   if (!isPrivate()) {
@@ -20,19 +19,21 @@ const Auth = ({ ...rest }) => {
   return <Route {...rest} />
 }
 
-const Router = () => (
-  <Layout>
-    <Switch>
-      <Route exact path="/signin" component={SignIn} />
-      <Route exact path="/register" component={Register} />
-      <Auth exact path="/" component={Home} />
-      <Auth exact path="/stacks/:id" component={Stack} />
-      <Auth exact path="/contact" component={Contact} />
+const Routers = () => (
+  <Router history={history}>
+    <Layout>
+      <Switch>
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/register" component={Register} />
+        <Auth exact path="/" component={Home} />
+        <Auth exact path="/stacks/:id" component={Stack} />
+        <Auth exact path="/contact" component={Contact} />
 
-      <Auth exact to="/error/404" component={Error404} />
-      <Redirect from="*" to="/error/404" />
-    </Switch>
-  </Layout>
+        <Auth exact to="/error/404" component={Error404} />
+        <Redirect from="*" to="/error/404" />
+      </Switch>
+    </Layout>
+  </Router>
 )
 
-export default Router
+export default Routers

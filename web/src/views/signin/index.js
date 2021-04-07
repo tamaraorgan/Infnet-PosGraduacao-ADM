@@ -10,10 +10,8 @@ import { Container, SignInBody, Title, FormBody, SectionSignIn } from './style'
 
 const SignIn = () => {
   const dispatch = useDispatch()
-  const [form, setForm] = useState({
-    email: 'tamara@gmail.com',
-    password: '123456'
-  })
+
+  const [form, setForm] = useState({})
   //const [submit, setSubmit] = useState(false)
 
   const handleChange = props => {
@@ -37,7 +35,7 @@ const SignIn = () => {
           <img src={imageSvg} alt="" />
           <SectionSignIn>
             <h3>FAÇA SEU LOGIN</h3>
-            <form onClick={submitForm}>
+            <form onSubmit={submitForm}>
               <div className="input-area">
                 <div>
                   <FaUser />
@@ -62,7 +60,9 @@ const SignIn = () => {
                   />
                 </div>
               </div>
-              <button type="submit">LOGIN</button>
+              <button type="submit" >
+                LOGIN
+              </button>
             </form>
             <p>
               Faça seu <a href="/register">cadastro</a>!

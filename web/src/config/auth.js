@@ -22,3 +22,5 @@ export const isPrivate = () => {
 
 export const saveAuth = data =>
   localStorage.setItem(TOKEN_KEY, JSON.stringify(data))
+
+export const removeToken = () => localStorage.removeItem(TOKEN_KEY)

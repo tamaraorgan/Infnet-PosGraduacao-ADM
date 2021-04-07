@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { getToken } from './auth'
 
 // definindo a url da api
 //const urlApi = process.env.REACT_APP_API;
@@ -10,5 +11,9 @@ const http = axios.create({
 })
 
 http.defaults.headers['content-type'] = 'application/json'
+
+if (getToken()) {
+  http.defaults.headers['token'] = getToken()
+}
 
 export default http

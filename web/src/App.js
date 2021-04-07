@@ -6,7 +6,7 @@ import store from './store'
 import theme from './styles/theme'
 import Global from './styles/global'
 
-import Router from './router/router'
+import Routers from './router/router'
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <Global />
-          <Router />
+          <Routers />
         </Provider>
       </ThemeProvider>
     </BrowserRouter>

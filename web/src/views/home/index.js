@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
 import { getServiceAllStacks } from '../../services/stack.service'
 import CardStack from '../../components/CardStack'
+import Header from '../../components/Header'
 
-import { Container, Body, Title, StackSection } from './style'
+import { Container, Body, StackSection } from './style'
+
 
 function Home() {
   const [stacks, setStacks] = useState([])
@@ -27,7 +29,7 @@ function Home() {
   document.title = 'INÍCIO'
   return (
     <Container>
-      <Title>INÍCIO</Title>
+      <Header title="INÍCIO"/>
       <Body>
         {hasError ? (
           <div>Aconteceu um erro, volte mais tarde...</div>
