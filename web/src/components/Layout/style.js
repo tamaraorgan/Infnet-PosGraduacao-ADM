@@ -1,30 +1,36 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const LayoutContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
-  @media (max-width: 576px) {
-    flex-direction: column;
+
+  @media (min-width: 1124px) {
+    display: flex;
   }
 `
-export const BodyLayout = styled.div`
-  width: 100vw;
-  height: 100%;
-  background-color: ${props => props.theme.colors.background};
-  @media (max-width: 576px) {
-    height: auto;
-    overflow-y: scroll;
-  }
+export const LayoutContent = styled.div`
+  width: auto;
 `
-export const SectionLayout = styled.section`
+
+export const LayoutSession = styled.div`
   width: 100%;
   height: 100%;
+`
+export const HeaderSession = styled.div`
+  height: 4rem;
+  width: 100%;
+  background-color: ${props => props.theme.colors.primary};
+`
+export const BodySession = styled.div`
+  height: calc(100% - 4rem);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 576px) {
-    height: auto;
-    overflow-y: scroll;
+  background-color: ${props => props.theme.colors.background};
+
+  @media (min-width: 1124px) {
+    height: calc(100% - 4rem);
+    width: calc(100% - 4rem);
   }
 `

@@ -1,13 +1,20 @@
 module.exports = (sequelize, DataTypes) => {
   const Skill = sequelize.define('Skill', {
-    skill: DataTypes.STRING,
-    image: DataTypes.STRING,
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true
+    },
+    name: DataTypes.STRING
   })
+
   Skill.associate = models => {
-    Skill.belongsTo(models.Register, {
-      foreignKey: 'register_id',
-      as: 'registers'
+    Skill.belongsToMany(models.Team, {
+      foreignKey: 'skill_id',
+      through: 'team_skills',
+      as: 'teams'
     })
   }
+
   return Skill
 }

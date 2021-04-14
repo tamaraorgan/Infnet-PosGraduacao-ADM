@@ -1,0 +1,47 @@
+
+
+{
+	"stack": "Back-End",
+	"image": "https://i.ibb.co/JsmVhPk/backend.png",
+	"icon": "https://i.ibb.co/t4nY5b5/icon-back.png",
+	"status": true
+}
+
+
+
+{
+	"stack": "Front-End",
+	"image": "https://i.ibb.co/WBTzRYb/frontend.png",
+	"icon": "https://i.ibb.co/drFJX3w/icon-front.png",
+	"status": true
+}
+
+
+{
+	"stack": "Mobile",
+	"image": "https://i.ibb.co/98z4t9B/mobile.png",
+	"icon": "https://i.ibb.co/8MHdTNx/icon-mobile.png",
+	"status": true
+}
+
+
+{
+	"stack": "Back-End",
+	"image": "https://i.ibb.co/JsmVhPk/backend.png",
+	"icon": "https://i.ibb.co/t4nY5b5/icon-back.png"
+}
+
+
+
+{
+	"stack": "Front-End",
+	"image": "https://i.ibb.co/WBTzRYb/frontend.png",
+	"icon": "https://i.ibb.co/drFJX3w/icon-front.png"
+}
+
+
+{
+	"stack": "Mobile",
+	"image": "https://i.ibb.co/98z4t9B/mobile.png",
+	"icon": "https://i.ibb.co/8MHdTNx/icon-mobile.png"
+}

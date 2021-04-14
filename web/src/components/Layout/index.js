@@ -1,16 +1,25 @@
-import React from 'react'
-import Menu from '../Menu'
-import { Container, BodyLayout, SectionLayout } from './style'
+import Menu from './Menu'
+import {
+  LayoutContainer,
+  LayoutContent,
+  LayoutSession,
+  HeaderSession,
+  BodySession
+} from './style'
 
-function Layout({ children }) {
-
+const Layout = ({ children }) => {
   return (
-    <Container>
-      <Menu />
-      <BodyLayout>
-        <SectionLayout>{children}</SectionLayout>
-      </BodyLayout>
-    </Container>
+    <LayoutContainer>
+      <LayoutContent>
+        <Menu />
+      </LayoutContent>
+
+      <LayoutSession>
+        <HeaderSession>{}</HeaderSession>
+        <BodySession>{children}</BodySession>
+      </LayoutSession>
+    </LayoutContainer>
   )
 }
+
 export default Layout

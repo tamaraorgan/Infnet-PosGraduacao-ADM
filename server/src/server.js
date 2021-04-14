@@ -1,16 +1,16 @@
 const express = require('express')
 const cors = require('cors')
-const router = require('./routers')
+const routes = require('./routes')
 
 const app = express()
-const port = process.env.PORT || 3333
+const port = 3333
 
 app.use(cors())
 app.use(express.json())
-app.use(router)
+app.use(routes)
 
 app.listen(port, () => {
-  console.log(`ᕦ(ツ)ᕤ Server starded on port ${port}!`);
+  console.log(`ᕦ(ツ)ᕤ Server starded on port ${port}!`)
 })
 
 module.exports = app

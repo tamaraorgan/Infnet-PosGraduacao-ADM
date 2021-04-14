@@ -2,7 +2,6 @@ const Joi = require('joi')
 
 const createDetail = error => {
   return error.details.reduce((acc, item) => {
-    console.log(acc, item)
     return [...acc, item.message]
   }, [])
 }
