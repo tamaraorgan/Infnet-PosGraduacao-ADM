@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const List = styled.div`
   width: 100%;
   margin-top: 2rem;
@@ -44,47 +43,40 @@ export const TableTitle = styled.table`
     }
   }
 `
-export const TableBody = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-
-  tr {
+export const TableBody = styled.div`
+  table {
     width: 100%;
-    display: flex;
-    border: none;
-  }
-  td {
-    flex: 1;
-    padding: 0.8rem 0.5rem;
-    border: none;
-    border: 1px solid ${props => props.theme.colors.background};
-    :last-child {
-      max-width: 5rem;
+    border-collapse: collapse;
+    tr {
+      width: 100%;
       display: flex;
-      justify-content: space-around;
-      align-items: center;
+      border: none;
+    }
+    td {
+      flex: 1;
+      padding: 0.8rem 0.5rem;
+      border: none;
+      border: 1px solid ${props => props.theme.colors.background};
+      :last-child {
+        max-width: 5rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
-      button {
-        background: none;
-        border: none;
-        outline: none;
-      }
-      svg {
-        color: ${props => props.theme.colors.text};
-        font-size: 1.3rem;
+        button {
+          background: none;
+          border: none;
+          outline: none;
+        }
+        svg {
+          color: ${props => props.theme.colors.text};
+          font-size: 1.3rem;
 
-        :hover {
-          color: ${props => props.theme.colors.secundary};
+          :hover {
+            color: ${props => props.theme.colors.secundary};
+          }
         }
       }
-    }
-  }
-  @media (max-width: 576px) {
-    td {
-      width: 12rem;
-    }
-    :last-child {
-      width: 6rem;
     }
   }
 `
