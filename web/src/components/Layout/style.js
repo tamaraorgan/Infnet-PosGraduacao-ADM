@@ -31,6 +31,6 @@ export const BodySession = styled.div`
 
   @media (min-width: 1124px) {
     height: calc(100% - 4rem);
-    width: calc(100% - 4rem);
+    width: 100%;
   }
 `

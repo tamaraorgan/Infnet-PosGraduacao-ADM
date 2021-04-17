@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { getAllStack } from '../../config/services/stack.service'
 import { StackContainer, CardStack } from './style'
 
@@ -21,7 +22,7 @@ const Stack = () => {
         <CardStack key={i}>
           <h3>{stack.stack}</h3>
           <img src={stack.image} alt="" />
-          <a href={stack.id}>SABER MAIS</a>
+          <Link to={`/stacks/${stack.id}/teams`}>ENTRAR</Link>
         </CardStack>
       ))}
     </StackContainer>

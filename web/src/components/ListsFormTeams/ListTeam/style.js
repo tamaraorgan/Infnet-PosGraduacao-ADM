@@ -1,7 +1,18 @@
-import styled from "styled-components"
+import styled from 'styled-components'
+
 
 export const List = styled.div`
+  width: 100%;
   margin-top: 2rem;
+  background: ${props => props.theme.colors.white};
+
+  p {
+    width: 100%;
+    background: ${props => props.theme.colors.background};
+  }
+  @media (max-width: 400px) {
+    overflow-x: scroll;
+  }
 `
 export const TableTitle = styled.table`
   width: 100%;
@@ -20,12 +31,10 @@ export const TableTitle = styled.table`
     padding: 0.8rem 0;
     border: 1px solid ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.textTitle};
-    font-size: 0.9rem;
     :last-child {
       max-width: 6rem;
     }
   }
-
   @media (max-width: 576px) {
     th {
       width: 12rem;
@@ -35,7 +44,6 @@ export const TableTitle = styled.table`
     }
   }
 `
-
 export const TableBody = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -49,8 +57,7 @@ export const TableBody = styled.table`
     flex: 1;
     padding: 0.8rem 0.5rem;
     border: none;
-    border: 1px solid ${props => props.theme.colors.tertiary};
-    font-size: 0.9rem;
+    border: 1px solid ${props => props.theme.colors.background};
     :last-child {
       max-width: 5rem;
       display: flex;
@@ -61,14 +68,13 @@ export const TableBody = styled.table`
         background: none;
         border: none;
         outline: none;
+      }
+      svg {
+        color: ${props => props.theme.colors.text};
+        font-size: 1.3rem;
 
-        svg {
-          color: ${props => props.theme.colors.primary};
-          font-size: 1rem;
-
-          :hover {
-            color: ${props => props.theme.colors.secundary};
-          }
+        :hover {
+          color: ${props => props.theme.colors.secundary};
         }
       }
     }

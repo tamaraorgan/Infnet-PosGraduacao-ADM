@@ -1,10 +1,23 @@
+import ImgModal from '../../assets/image/svg-mulher-big.svg'
+
 import { ModalContainer, ModalSession } from './style'
 
-const Modal = () => {
+function Modal({ modal, isShow, toggleModal, handleDeleteInput }) {
   return (
-    <ModalContainer>
+    <ModalContainer isShow={isShow}>
       <ModalSession>
-        <h1>Modal</h1>
+        <img src={ImgModal} alt="" />
+        <div className="modal-body">
+          <h4>ALERTA!</h4>
+          <p>
+            Tem certeza que deseja excluir
+            <strong> {modal?.data?.name} </strong>?
+          </p>
+          <div className="modal-button">
+            <button className="delete" onClick={handleDeleteInput}>SIM</button>
+            <button className="confirm" onClick={toggleModal}>NÃO</button>
+          </div>
+        </div>
       </ModalSession>
     </ModalContainer>
   )

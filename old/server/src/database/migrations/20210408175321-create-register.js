@@ -16,13 +16,6 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      skill_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'skills', key: 'id' },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      },
       employee: {
         type: Sequelize.STRING,
         allowNull: false

@@ -36,7 +36,7 @@ function Stack() {
   document.title = 'STACK'
   return (
     <Container>
-      <Header title={lists.stack} />
+     
       <Body>
         {loading ? (
           <Loading />

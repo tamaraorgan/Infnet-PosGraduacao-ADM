@@ -12,11 +12,5 @@ module.exports = (sequelize, DataTypes) => {
       as: 'stacks'
     })
   }
-  Register.associate = models => {
-    Register.belongsTo(models.Skill, {
-      foreignKey: 'skill_id',
-      as: 'skills'
-    })
-  }
   return Register
 }

@@ -3,11 +3,11 @@ module.exports = (sequelize, DataTypes) => {
     skill: DataTypes.STRING,
     image: DataTypes.STRING
   })
-  Skill.associate = models => {
-    Skill.hasMany(models.Register, {
-      foreignKey: 'skill_id',
-      as: 'registers'
-    })
-  }
+  // Skill.associate = models => {
+  //   Skill.hasMany(models.Register, {
+  //     foreignKey: 'skill_id',
+  //     as: 'registers'
+  //   })
+  // }
   return Skill
 }

@@ -50,23 +50,6 @@ function Menu() {
           </Button>
         )}
         <MenuLink show={isDrop} active={isActive}>
-          <NavLink exact activeClassName="active" to="/signin">
-            <div className="grupIcon">
-              <div className="icon">
-                <FaUserCheck />
-              </div>
-              <div className="description">SIGNIN</div>
-            </div>
-          </NavLink>
-          <NavLink exact activeClassName="active" to="/register">
-            <div className="grupIcon">
-              <div className="icon">
-                <FaUserPlus />
-              </div>
-              <div className="description">CADASTRO</div>
-            </div>
-          </NavLink>
-
           <NavLink
             exact
             activeClassName="active"
@@ -82,7 +65,12 @@ function Menu() {
               </div>
               <div className="drop">
                 {stacks.map((stack, i) => (
-                  <NavLink key={i} exact activeClassName="active" to={`/stacks/${stack.id}/teams`}>
+                  <NavLink
+                    key={i}
+                    exact
+                    activeClassName="active"
+                    to={`/stacks/${stack.id}/teams`}
+                  >
                     <div className="grupIcon down">
                       <div className="icon">
                         <img src={stack.icon} alt="" />
@@ -92,6 +80,22 @@ function Menu() {
                   </NavLink>
                 ))}
               </div>
+            </div>
+          </NavLink>
+          <NavLink exact activeClassName="active" to="/signin">
+            <div className="grupIcon">
+              <div className="icon">
+                <FaUserCheck />
+              </div>
+              <div className="description">SIGNIN</div>
+            </div>
+          </NavLink>
+          <NavLink exact activeClassName="active" to="/register">
+            <div className="grupIcon">
+              <div className="icon">
+                <FaUserPlus />
+              </div>
+              <div className="description">CADASTRO</div>
             </div>
           </NavLink>
 

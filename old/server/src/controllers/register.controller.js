@@ -16,7 +16,7 @@ module.exports = {
       const { stack_id } = request.params
       console.log(stack_id)
 
-      const { employee, email, phone, place, state, skill } = request.body
+      const { employee, email, phone, place, state } = request.body
 
       const stacks = await db.Stack.findByPk(stack_id)
 
@@ -30,9 +30,8 @@ module.exports = {
         phone,
         place,
         state,
-        skill,
         stack_id,
-        skill_id
+
       })
       //response.json(employees)
       response.status(200).send({ message: 'Funcionário criado com sucesso!' })

@@ -16,22 +16,11 @@ const ListRegister = ({ register, update }) => {
     if (modal.data.id) {
       deleteServiceAllStacksList(modal.data.id)
         .then(() => {
-          InfoSweet.fire({
-            icon: 'success',
-            title: 'Registro deletado com sucesso!',
-            showConfirmButton: false,
-            timer: 2500
-          })
+          
           update(true)
         })
         .catch(error => {
-          InfoSweet.fire({
-            position: 'top-end',
-            icon: 'error',
-            title: 'Tente novamente mais tarde!',
-            showConfirmButton: false,
-            timer: 2500
-          })
+         
         })
     }
   }

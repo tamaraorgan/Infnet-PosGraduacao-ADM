@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-export const MenuContainer = styled.div``
+export const MenuContainer = styled.div`
+  background-color: ${props => props.theme.colors.white};
+  height: 100%;
+`
 
 export const MenuLogo = styled.div`
   display: none;
@@ -53,8 +56,6 @@ export const MenuLink = styled.div`
     .grupIcon {
       display: flex;
       width: 100%;
-
-
     }
     .icon {
       height: 4rem;

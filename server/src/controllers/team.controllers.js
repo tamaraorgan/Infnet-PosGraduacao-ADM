@@ -7,7 +7,7 @@ module.exports = {
     const stacks = await db.Stack.findByPk(stack_id, {
       include: { association: 'teams' }
     })
-    return response.json(stacks)
+    return response.json(stacks.teams)
   },
 
   async create(request, response) {

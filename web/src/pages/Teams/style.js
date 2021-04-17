@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-export const TeamsContainer = styled.div`
+export const Container = styled.div`
   width: 80%;
 `
-
