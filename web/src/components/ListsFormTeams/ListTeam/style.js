@@ -51,12 +51,14 @@ export const TableBody = styled.div`
       width: 100%;
       display: flex;
       border: none;
+      border-collapse: collapse;
     }
     td {
       flex: 1;
-      padding: 0.8rem 0.5rem;
+      padding: 0.7rem 0.5rem;
       border: none;
       border: 1px solid ${props => props.theme.colors.background};
+      font-size: 0.9rem;
       :last-child {
         max-width: 5rem;
         display: flex;
