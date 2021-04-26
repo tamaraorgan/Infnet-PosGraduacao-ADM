@@ -9,4 +9,4 @@ export const deleteAllTeams = (id, data) =>
   http.delete(`projects/teams/${id}`, data)
 
 export const updateAllTeams = (id, data) =>
-  http.update(`projects/teams/${id}`, data)
+  http.put(`projects/teams/${id}`, data)

@@ -6,7 +6,6 @@ function Modal({ modal, isShow, toggleModal, handleDeleteInput }) {
   return (
     <ModalContainer isShow={isShow}>
       <ModalSession>
-        <img src={ImgModal} alt="" />
         <div className="modal-body">
           <h4>ALERTA!</h4>
           <p>
@@ -14,10 +13,15 @@ function Modal({ modal, isShow, toggleModal, handleDeleteInput }) {
             <strong> {modal?.data?.name} </strong>?
           </p>
           <div className="modal-button">
-            <button className="delete" onClick={handleDeleteInput}>SIM</button>
-            <button className="confirm" onClick={toggleModal}>NÃO</button>
+            <button className="delete" onClick={handleDeleteInput}>
+              SIM
+            </button>
+            <button className="confirm" onClick={toggleModal}>
+              NÃO
+            </button>
           </div>
         </div>
+        <img src={ImgModal} alt="" />
       </ModalSession>
     </ModalContainer>
   )

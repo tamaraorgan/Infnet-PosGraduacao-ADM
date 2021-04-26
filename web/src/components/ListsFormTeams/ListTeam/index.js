@@ -13,9 +13,7 @@ const ListRegister = ({ teams, update }) => {
     isShow: false,
     data: null
   })
-  console.log('====================================')
-  console.log(teams, 'teams')
-  console.log('====================================')
+
   const handleDeleteInput = () => {
     if (modal.data.id) {
       deleteAllTeams(modal.data.id)
@@ -75,12 +73,18 @@ const ListRegister = ({ teams, update }) => {
               teams.map((item, i) => (
                 <ListItemForm key={i}>
                   {item.id === idItem ? (
-                    <FormUpdate teams={item} setIdItem={setIdItem} />
+                    <FormUpdate
+                      teams={item}
+                      setIdItem={setIdItem}
+                      update={update}
+                      id={item.id}
+                    />
                   ) : (
                     <FormList
                       teams={item}
                       toggleEdit={toggleEdit}
                       toggleModal={toggleModal}
+                      update={update}
                     />
                   )}
                 </ListItemForm>

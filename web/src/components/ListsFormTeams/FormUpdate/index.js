@@ -1,19 +1,82 @@
-import styled from 'styled-components'
-
 import { RiCheckLine } from 'react-icons/ri'
 import { MdClose } from 'react-icons/md'
 
-const FormUpdate = ({ teams, setIdItem}) => {
+import { FormEditContainer } from './style'
+import { useState } from 'react'
+import { updateAllTeams } from '../../../config/services/team.service'
 
+const FormUpdate = ({ teams, setIdItem, update, id }) => {
+  console.log(id, 'id')
+  const [form, setForm] = useState({})
+
+  const handleUpdate = e => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleUpdateList = async () => {
+    if (teams.id) {
+      // const newform = {
+      //   ...form,
+      //   name: form.name.toUpperCase(),
+      //   state: form.state.toUpperCase(),
+      //   email: form.email.toLowerCase(),
+      //   phone: form.phone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3'),
+      //   progress: form.progress
+      // }
+
+      updateAllTeams(teams.id, form)
+        .then(() => {
+          update(true)
+        })
+        .catch(error => {
+          alert('Aconteceu um erro.')
+        })
+    }
+  }
+
+  console.log(form, 'form')
   return (
     <FormEditContainer>
-      <input type="text" value={teams.name} />
-      <input type="text" value={teams.email} />
-      <input type="text" value={teams.phone} />
-      <input type="text" value={teams.state} />
-      <input type="text" value={teams.progress} />
+      <input
+        type="text"
+        name="name"
+        placeholder={teams.name}
+        value={form.name || ''}
+        onChange={handleUpdate}
+      />
+      <input
+        type="text"
+        name="email"
+        placeholder={teams.email}
+        value={form.email || ''}
+        onChange={handleUpdate}
+      />
+      <input
+        type="text"
+        name="phone"
+        placeholder={teams.phone}
+        value={form.phone || ''}
+        onChange={handleUpdate}
+      />
+      <input
+        type="text"
+        name="state"
+        placeholder={teams.state}
+        value={form.state || ''}
+        onChange={handleUpdate}
+      />
+      <input
+        type="text"
+        name="progress"
+        placeholder={teams.progress}
+        value={form.progress || ''}
+        onChange={handleUpdate}
+      />
       <div className="buttons">
-        <button type="submit">
+        <button type="button" onClick={() => handleUpdateList(teams)}>
           <RiCheckLine />
         </button>
         <button type="button" onClick={() => setIdItem('')}>
@@ -25,41 +88,3 @@ const FormUpdate = ({ teams, setIdItem}) => {
 }
 
 export default FormUpdate
-
-export const FormEditContainer = styled.form`
-  display: flex;
-  width: 100%;
-  height: 2.5rem;
-
-  input {
-    flex: 1;
-    border: 1px solid ${props => props.theme.colors.background};
-    outline-color: ${props => props.theme.colors.primary};
-    box-sizing: border-box;
-    padding-left: 0.5rem;
-    font-family: 'Raleway', sans-serif;
-    color: ${props => props.theme.colors.tertiary};
-  }
-  .buttons {
-    width: 6rem;
-    border: 1px solid ${props => props.theme.colors.background};
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    button {
-      border: none;
-      cursor: pointer;
-      background-color: transparent;
-
-      svg {
-        font-size: 1.3rem;
-        color: ${props => props.theme.colors.primary};
-
-        :hover {
-          color: ${props => props.theme.colors.secundary};
-        }
-      }
-    }
-  }
-`

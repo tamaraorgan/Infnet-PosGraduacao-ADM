@@ -7,6 +7,7 @@ export default {
     tertiary: '#c0e6e2',
     icon: '#144052',
     text: '#040404',
+    input: "#888888",
     textTitle: '#F7F7FF',
     lineGray: '#f1f1f1',
     red: '#D52941',

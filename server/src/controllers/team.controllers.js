@@ -42,30 +42,30 @@ module.exports = {
   },
 
   async update(request, response) {
-    try {
-      const { id } = request.params 
-      const{ name, email, phone, place, state } = request.body
+    // try {
+    const { id } = request.params
+    const { name, email, phone, progress, state } = request.body
 
-      const teamExists = await db.Team.findOne({ where: { id } })
+    const teamExists = await db.Team.findOne({ where: { id } })
 
-      if (!teamExists) {
-        return response.status(400).send({ error: 'Team not found.' })
-      }
-      await db.Team.update(
-        {
-          name,
-          email,
-          phone,
-          place,
-          state,
-        },
-        { where: {} }
-      )
-      response.status(200).send({ message: ' Team successfully changed ' })
-
-    } catch (error) {
-      response.status(500).send({ error: 'Internal server error!' })
+    if (!teamExists) {
+      return response.status(400).send({ error: 'Team not found.' })
     }
+    await db.Team.update(
+      {
+        name,
+        email,
+        phone,
+        progress,
+        state
+      },
+      { where: { id } }
+    )
+    response.status(200).send({ message: ' Team successfully changed ' })
+
+    // } catch (error) {
+    //   response.status(500).send({ error: 'Internal server error!' })
+    // }
   },
 
   async delete(request, response) {
