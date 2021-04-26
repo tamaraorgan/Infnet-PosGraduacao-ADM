@@ -1,11 +1,10 @@
 import { useState } from 'react'
-import { IoMdTrash } from 'react-icons/io'
-import { MdModeEdit } from 'react-icons/md'
 import { deleteAllTeams } from '../../../config/services/team.service'
 import Modal from '../../Modal'
-import FormUpdate from '../../ListsFormTeams/FormUpdate'
 
-import { List, TableTitle, TableBody } from './style'
+import { List, ListTitle, ListBody, ListItemForm } from './style'
+import FormUpdate from '../FormUpdate'
+import FormList from '../FormList'
 
 const ListRegister = ({ teams, update }) => {
   const [isEditInput, setIsEditInput] = useState(false)
@@ -62,55 +61,31 @@ const ListRegister = ({ teams, update }) => {
     <List>
       {teams && teams.length ? (
         <>
-          <TableTitle>
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
-                <th>Estado</th>
-                <th>Progresso</th>
-                <th></th>
-              </tr>
-            </thead>
-          </TableTitle>
+          <ListTitle>
+            <p>Nome</p>
+            <p>E-mail</p>
+            <p>Telefone</p>
+            <p>Estado</p>
+            <p>Progresso</p>
+            <div></div>
+          </ListTitle>
 
-          <TableBody>
+          <ListBody>
             {teams &&
               teams.map((item, i) => (
-                <>
-                  {!isEditInput ? (
-                    <table>
-                      <tbody key={i}>
-                        <tr>
-                          <td>{item.name}</td>
-                          <td>{item.email}</td>
-                          <td>{item.phone}</td>
-                          <td>{item.state}</td>
-                          <td>{item.progress}</td>
-                          <td>
-                            <button onClick={() => toggleEdit(item)}>
-                              <MdModeEdit />
-                            </button>
-                            <button onClick={() => toggleModal(item)}>
-                              <IoMdTrash />
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                <ListItemForm key={i}>
+                  {item.id === idItem ? (
+                    <FormUpdate teams={item} setIdItem={setIdItem} />
                   ) : (
-                    <FormUpdate
+                    <FormList
                       teams={item}
-                      isEdit={setIsEditInput}
                       toggleEdit={toggleEdit}
-                      index={i}
+                      toggleModal={toggleModal}
                     />
                   )}
-                </>
+                </ListItemForm>
               ))}
-          </TableBody>
-
+          </ListBody>
           <Modal
             modal={modal}
             isShow={modal.isShow}
