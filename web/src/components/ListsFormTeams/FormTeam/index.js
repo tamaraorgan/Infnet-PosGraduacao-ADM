@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { IoAdd } from 'react-icons/io5'
 import { postAllTeams } from '../../../config/services/team.service'
 
-
 import { Form } from './style'
 
 const FormTeam = ({ id, update }) => {
@@ -19,10 +18,10 @@ const FormTeam = ({ id, update }) => {
     const newform = {
       ...form,
       name: form.name.toUpperCase(),
-      place: form.place.toUpperCase(),
       state: form.state.toUpperCase(),
       email: form.email.toLowerCase(),
-      phone: form.phone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3')
+      phone: form.phone.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3'),
+      progress: form.progress
     }
     await postAllTeams(id, newform)
       .then(() => {
@@ -30,7 +29,7 @@ const FormTeam = ({ id, update }) => {
         update(true)
       })
       .catch(err => {
-        alert("Usuário já cadastrado.")
+        alert('Usuário já cadastrado.')
       })
   }
 
@@ -60,16 +59,16 @@ const FormTeam = ({ id, update }) => {
         />
         <input
           type="text"
-          name="place"
-          placeholder="Local"
-          value={form.place || ''}
+          name="state"
+          placeholder="Estado"
+          value={form.state || ''}
           onChange={handleChangeList}
         />
         <input
           type="text"
-          name="state"
-          placeholder="Estado"
-          value={form.state || ''}
+          name="progress"
+          placeholder="Progresso"
+          value={form.progress || ''}
           onChange={handleChangeList}
         />
         <button type="submit">

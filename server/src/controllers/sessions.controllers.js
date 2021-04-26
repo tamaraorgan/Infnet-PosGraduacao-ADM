@@ -5,7 +5,7 @@ const {
 
 module.exports = {
   async authUser(request, response) {
-    try {
+    // try {
       const { user, password } = request.body
 
       const result = await usersAlreadyExists(user, password)
@@ -15,8 +15,8 @@ module.exports = {
       }
       var credential = await createCredential(user)
       response.status(200).send(credential)
-    } catch (error) {
-      response.status(500).send({ error: 'Internal server error!' })
-    }
+    // } catch (error) {
+    //   response.status(500).send({ error: 'Internal server error!' })
+    // }
   }
 }

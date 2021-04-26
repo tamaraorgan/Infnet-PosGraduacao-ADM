@@ -32,7 +32,7 @@ function Teams() {
     setUpdateList(false)
   }, [getListById, updateList])
 
-  console.log(listsTeams);
+  console.log(listsTeams, "list");
 
   document.title = 'Teams'
   return (
@@ -42,7 +42,7 @@ function Teams() {
       ) : (
         <>
           <FormTeam id={id} update={setUpdateList} />
-          <ListTeam teams={listsTeams} update={setUpdateList} />
+          <ListTeam teams={listsTeams.teams} update={setUpdateList} />
         </>
       )}
     </Container>

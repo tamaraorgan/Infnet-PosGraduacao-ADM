@@ -4,9 +4,15 @@ export default createGlobalStyle`
   * { 
     margin: 0;
     padding: 0;
-  }
+    box-sizing: border-box;
+  } 
   body {
     font-family: 'Raleway', sans-serif;
     background-color: ${props => props.theme.colors.background};
+    overflow: hidden;
+  }
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.colors.text}
   }
 `

@@ -9,11 +9,14 @@ import { List, TableTitle, TableBody } from './style'
 
 const ListRegister = ({ teams, update }) => {
   const [isEditInput, setIsEditInput] = useState(false)
+  const [idItem, setIdItem] = useState('')
   const [modal, setModal] = useState({
     isShow: false,
     data: null
   })
-
+  console.log('====================================')
+  console.log(teams, 'teams')
+  console.log('====================================')
   const handleDeleteInput = () => {
     if (modal.data.id) {
       deleteAllTeams(modal.data.id)
@@ -39,15 +42,19 @@ const ListRegister = ({ teams, update }) => {
   //   })
   // }
 
-  const toggleEditTeam = index => {
-    teams.map((item, i) => {
-      if (i === index) {
-        console.log(i, 'i')
-        console.log(index, 'index')
-        setIsEditInput(true)
-      }
-      return item
-    })
+  // const toggleEditTeam = index => {
+  //   teams.map((item, i) => {
+  //     if (i === index) {
+  //       console.log(i, 'i')
+  //       console.log(index, 'index')
+  //
+  //     }
+  //     return item
+  //   })
+  // }
+
+  const toggleEdit = item => {
+    setIdItem(item.id)
   }
 
   console.log(isEditInput)
@@ -61,8 +68,8 @@ const ListRegister = ({ teams, update }) => {
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>Telefone</th>
-                <th>Lugar</th>
                 <th>Estado</th>
+                <th>Progresso</th>
                 <th></th>
               </tr>
             </thead>
@@ -79,10 +86,10 @@ const ListRegister = ({ teams, update }) => {
                           <td>{item.name}</td>
                           <td>{item.email}</td>
                           <td>{item.phone}</td>
-                          <td>{item.place}</td>
                           <td>{item.state}</td>
+                          <td>{item.progress}</td>
                           <td>
-                            <button onClick={() => toggleEditTeam(i)}>
+                            <button onClick={() => toggleEdit(item)}>
                               <MdModeEdit />
                             </button>
                             <button onClick={() => toggleModal(item)}>
@@ -96,7 +103,7 @@ const ListRegister = ({ teams, update }) => {
                     <FormUpdate
                       teams={item}
                       isEdit={setIsEditInput}
-                      toggleEditTeam={toggleEditTeam}
+                      toggleEdit={toggleEdit}
                       index={i}
                     />
                   )}

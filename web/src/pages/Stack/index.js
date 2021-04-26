@@ -15,14 +15,14 @@ const Stack = () => {
   useEffect(() => {
     getStack()
   }, [getStack])
-
+  
   return (
     <StackContainer>
       {stacks.map((stack, i) => (
         <CardStack key={i}>
           <h3>{stack.stack}</h3>
           <img src={stack.image} alt="" />
-          <Link to={`/stacks/${stack.id}/teams`}>ENTRAR</Link>
+          <Link to={`/stacks/${stack.id}/projects`}>ENTRAR</Link>
         </CardStack>
       ))}
     </StackContainer>

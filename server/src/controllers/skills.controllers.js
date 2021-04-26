@@ -20,7 +20,7 @@ module.exports = {
 
   async create(request, response) {
     const { team_id } = request.params
-    const { name, id } = request.body
+    const { name } = request.body
 
     const team = await db.Team.findByPk(team_id)
 
@@ -29,7 +29,7 @@ module.exports = {
     }
 
     const [skill] = await db.Skill.findOrCreate({
-      where: { name}
+      where: { name }
     })
 
     await team.addSkill(skill)

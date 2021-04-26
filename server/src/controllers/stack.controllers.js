@@ -59,7 +59,7 @@ module.exports = {
           icon,
           image
         },
-        { where: {} }
+        { where: { id } }
       )
       response.status(200).send({ message: ' Stack successfully changed ' })
     } catch (error) {

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { RiCheckLine } from 'react-icons/ri'
 import { MdClose } from 'react-icons/md'
 
-const FormUpdate = ({ teams, isEdit, toggleEditTeam, index }) => {
+const FormUpdate = ({ teams, isEdit, toggleEdit, index }) => {
   console.log(teams, 'updateList')
   return (
     <FormEditContainer isEdit={isEdit} key={index}>

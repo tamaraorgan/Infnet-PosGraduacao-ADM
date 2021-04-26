@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   Stack.associate = models => {
-    Stack.hasMany(models.Team, { foreignKey: 'stack_id', as: 'teams' })
+    Stack.hasMany(models.Project, { foreignKey: 'stack_id', as: 'projects' })
   }
 
   return Stack

@@ -8,8 +8,7 @@ export const SignInContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  border: 1px solid blue;
-
+  background-color: ${props => props.theme.colors.primary};
   h1 {
     color: ${props => props.theme.colors.text};
     margin: 3rem 0 1rem 0;
@@ -21,12 +20,30 @@ export const SignInContainer = styled.div`
   form {
     width: 90%;
     border-radius: 10px;
-    background-color: ${props => props.theme.colors.primary};
+
     padding: 0.8rem 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-items: center;
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      label {
+        color: ${props => props.theme.colors.secundary};
+        font-family: 'Raleway', sans-serif;
+        margin-right: 0.3rem;
+      }
+      input {
+        margin-right: 1.5rem;
+        :last-child {
+          margin-right: 0rem;
+        }
+      }
+    }
 
     .inputDiv {
       width: 100%;
@@ -61,14 +78,14 @@ export const SignInContainer = styled.div`
   }
   button {
     border: none;
-    background: ${props => props.theme.colors.tertiary};
+    background: ${props => props.theme.colors.secundary};
     padding: 0.5rem 2.5rem;
-    color: ${props => props.theme.colors.text};
+    color: ${props => props.theme.colors.white};
     margin: 0.7rem 0;
     font-family: 'Raleway', sans-serif;
 
     :hover {
-      background-color: ${shade(0.2, '#c0e6e2')};
+      background-color: ${shade(0.2, '#144052')};;
     }
   }
 
@@ -93,6 +110,7 @@ export const SignInContainer = styled.div`
 
   @media (min-width: 1224px) {
     width: 60%;
+    min-height: 20rem;
     height: 60%;
     background-color: ${props => props.theme.colors.primary};
     border-radius: 10px;

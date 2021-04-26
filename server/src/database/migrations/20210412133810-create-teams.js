@@ -9,10 +9,10 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
       },
-      stack_id: {
+      project_id: {
         type: Sequelize.UUID,
         allowNull: false,
-        references: { model: 'stacks', key: 'id' },
+        references: { model: 'projects', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
@@ -28,11 +28,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      place: {
+      state: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      state: {
+      progress: {
         type: Sequelize.STRING,
         allowNull: false
       },

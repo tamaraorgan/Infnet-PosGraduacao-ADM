@@ -47,11 +47,11 @@ export const TableBody = styled.div`
   table {
     width: 100%;
     border-collapse: collapse;
+    
     tr {
       width: 100%;
       display: flex;
-      border: none;
-      border-collapse: collapse;
+    
     }
     td {
       flex: 1;
@@ -71,7 +71,7 @@ export const TableBody = styled.div`
           outline: none;
         }
         svg {
-          color: ${props => props.theme.colors.text};
+          color: ${props => props.theme.colors.primary};
           font-size: 1.3rem;
 
           :hover {

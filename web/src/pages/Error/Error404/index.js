@@ -1,6 +1,6 @@
 import { ErrorContainer, Body } from './style'
 
-import ErrorImg from '../../assets/image/svg-mulher-big.svg'
+import ErrorImg from '../../../assets/image/svg-mulher-big.svg'
 
 function Error404() {
   document.title = 'ERROR'

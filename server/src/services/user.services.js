@@ -1,26 +1,25 @@
 const md5 = require('md5')
 const jwt = require('jsonwebtoken')
 const db = require('../models/index.js')
-const { response } = require('express')
 
 const hashSecret = process.env.CRYPTO_KEY
 
+ const searchUsersToEmail = async(email) => {
+  const users = await db.User.findOne({
+    where: {
+      email
+    }
+  })
+
+  return users
+}
+
 module.exports = {
-  async searchUsersToEmail(email) {
-    const users = await db.User.findOne({
-      where: {
-        email
-      }
-    })
-
-    return users
-  },
-
   async usersAlreadyExists(user, password) {
     const users = await db.User.findOne({
       where: {
         email: user,
-        password //:md5(password + hashSecret)
+        password //: md5(password + hashSecret)
       }
     })
 
@@ -28,7 +27,7 @@ module.exports = {
   },
 
   async createCredential(userEmail) {
-    try {
+    // try {
       const users = await searchUsersToEmail(userEmail)
       const { name, email, type } = users
 
@@ -43,8 +42,8 @@ module.exports = {
         }
       }
       return credential
-    } catch (error) {
-      response.status(500).send({ error: 'Internal server error' })
-    }
+    // } catch (error) {
+    //   response.status(500).send({ error: 'Internal server error' })
+    // }
   }
 }

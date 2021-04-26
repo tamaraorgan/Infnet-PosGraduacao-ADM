@@ -16,6 +16,9 @@ export const RegisterSection = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border: 1.5px solid ${props => props.theme.colors.tertiary};
+  border-radius: 10px;
+  padding: 1rem;
 
   img {
     height: 35%;
@@ -37,7 +40,7 @@ export const RegisterSection = styled.div`
 
     h4 {
       margin-bottom: 1.7rem;
-      color: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.colors.secundary};
       font-weight: 400;
     }
     input {
@@ -49,7 +52,7 @@ export const RegisterSection = styled.div`
       outline: none;
       margin-bottom: 0.7rem;
       ::placeholder {
-        color: ${props => props.theme.colors.primary};
+        color: ${props => props.theme.colors.text};
         font-family: 'Raleway', sans-serif;
       }
       :focus {
@@ -58,7 +61,7 @@ export const RegisterSection = styled.div`
     }
     button {
       border: none;
-      background: ${props => props.theme.colors.primary};
+      background: ${props => props.theme.colors.secundary};
       padding: 0.5rem 2.5rem;
       color: ${props => props.theme.colors.white};
       margin: 0.7rem 0;

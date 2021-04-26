@@ -2,21 +2,21 @@ const db = require('../models/index.js')
 
 module.exports = {
   async index(request, response) {
-    const { stack_id } = request.params
+    const { project_id } = request.params
 
-    const stacks = await db.Stack.findByPk(stack_id, {
+    const projects = await db.Project.findByPk(project_id, {
       include: { association: 'teams' }
     })
-    return response.json(stacks.teams)
+    return response.json(projects)
   },
 
   async create(request, response) {
-    const { stack_id } = request.params
-    const { name, email, phone, place, state } = request.body
+    const { project_id } = request.params
+    const { name, email, phone, progress, state } = request.body
 
-    const stacks = await db.Stack.findByPk(stack_id)
-    if (!stacks) {
-      return response.status(400).json({ error: 'Stack not found' })
+    const projects = await db.Project.findByPk(project_id)
+    if (!projects) {
+      return response.status(400).json({ error: 'Project not found' })
     }
 
     const teamExists = await db.Team.findOne({ where: { email } })
@@ -26,9 +26,9 @@ module.exports = {
         name,
         email,
         phone,
-        place,
+        progress,
         state,
-        stack_id
+        project_id
       }
 
       await db.Team.create(team)

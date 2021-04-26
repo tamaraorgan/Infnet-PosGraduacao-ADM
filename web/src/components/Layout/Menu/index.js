@@ -69,7 +69,7 @@ function Menu() {
                     key={i}
                     exact
                     activeClassName="active"
-                    to={`/stacks/${stack.id}/teams`}
+                    to={`/stacks/${stack.id}/projects`}
                   >
                     <div className="grupIcon down">
                       <div className="icon">

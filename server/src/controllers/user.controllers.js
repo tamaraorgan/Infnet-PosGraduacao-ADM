@@ -61,7 +61,7 @@ module.exports = {
           password,
           type
         },
-        { where: {} }
+        { where: { id } }
       )
       response.status(200).send({ message: ' User successfully changed ' })
     } catch (error) {

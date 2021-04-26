@@ -8,13 +8,13 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
-    place: DataTypes.STRING,
+    progress: DataTypes.STRING,
     state: DataTypes.STRING
   })
   Team.associate = models => {
-    Team.belongsTo(models.Stack, {
-      foreignKey: 'stack_id',
-      as: 'stack'
+    Team.belongsTo(models.Project, {
+      foreignKey: 'project_id',
+      as: 'projects'
     })
   }
   Team.associate = models => {
